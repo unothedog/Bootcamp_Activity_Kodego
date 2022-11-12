@@ -1,0 +1,39 @@
+*{
+    font-family: tahoma; 
+    font-size: medium;
+}
+
+#external{
+    color: yellow;
+}
+ 
+h1{
+    font-size: 2rem;
+}
+ 
+h2{
+    text-transform: uppercase;
+}
+
+.language-to-learned{
+    font-weight: bold;
+}
+ol{
+    background-color: yellowgreen;
+}
+.other-to-learned{
+    font-weight: bold;
+    font-size: large;
+}
+ ul > li{
+    list-style-type: none;
+    letter-spacing: 5px;
+ }
+ ul > li > img{
+    width: 5%;
+    height: 5%;
+    border-radius: 50%;
+ }
+ul ~ p{
+    text-align: center;
+}

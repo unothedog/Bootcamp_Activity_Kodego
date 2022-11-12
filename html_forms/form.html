@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main Form</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="form-menu">
+            <div class="form-request">
+                <form method="" action="notification.html">
+                    <div>
+                        <h1>
+                            ABC Company IT Service Request Form
+                        </h1>
+                    </div>
+                    <div>
+                        <label class="form-label" for="fname">First Name:</label>
+                        <input class="form-input" type="text" id="fname" placeholder="First name" required>
+                    </div>
+                    <div>
+                        <label class="form-label" for="lname">Last Name:</label>
+                        <input class="form-input" type="text" id="lname" placeholder="Last name" required>
+                    </div>
+                    <div>
+                        <label class="form-label" for="email">Email:</label>
+                        <input class="form-input" type="email" id="email" placeholder="email" required>
+                    </div>
+                    <div>
+                        <label class="form-label" for="phone">Contact Number:</label>
+                        <input class="form-input" type="tel" id="phone" placeholder="090000000" required>
+                    </div>
+                    <div class="chk_option" id="chk_option">
+                        Please select at least one option.
+                    </div>
+                    <div>
+                        <label class="form-label" for="work_loc">Work location:</label> 
+                    </div>
+                    <div>
+                        <input type="radio" id="onsite" name="work_site" value="Onsite">
+                        <label class="form-label" for="onsite">Onsite
+                            <ul>
+                                <li>
+                                    Please state your Workstation No., Department, Floor and Building
+                                </li>
+                            </ul>
+                        </label>
+                        <br>
+                        <input type="radio" id="wfh" name="work_site" value="WFH">
+                        <label class="form-label" for="css">WFH
+                            <ul>
+                                <li>
+                                    Please complete your address and include a landmark nearest to your location
+                                </li>
+                            </ul>
+                        </label>
+                    </div>
+                    <div>
+                        <textarea name="location" id="location" cols="5" rows="3" placeholder="Please fill out information needed" required></textarea>
+                    </div>
+                    <div>
+                        <div class="chk_error" id="chk_error">
+                            Please select at least one option.
+                        </div>
+                        <div>
+                            <label class="form-label" for="qa">Service Request Type</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="service[]" id="pc_lt_setup" value="pc_lt_setup">
+                            <label for="pc_lt_setup">Desktop/Laptop Setup</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="service[]" id="pc_lt_support" value="pc_lt_support">
+                            <label for="pc_lt_support">Desktop/Laptop Support</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="service[]" id="pc_lt_maintain" value="pc_lt_maintain">
+                            <label for="pc_lt_maintain">Desktop/Laptop Maintenance</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="service[]" id="soft_install" value="soft_install">
+                            <label for="soft_install">Software Installation</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="service[]" id="soft_support" value="soft_support">
+                            <label for="soft_support">Software Support</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="service[]" id="peripheral_setup" value="peripheral_setup">
+                            <label for="peripheral_setup">Computer Peripheral Setup</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="service[]" id="peripheral_ts" value="peripheral_ts">
+                            <label for="peripheral_ts">Peripheral Troubleshooting</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="service[]" id="pc_peripheral_maintain" value="pc_peripheral_maintain">
+                            <label for="pc_peripheral_maintain">Computer Peripheral Maintenance</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="form-label" for="req_desc">Request Description:</label> 
+                        <textarea name="comments" id="comments" cols="5" rows="5" placeholder="Type detailed request description here" required></textarea>
+                    </div>
+                    <div>
+                        <label class="form-label" for="myfile">Please select a picture or screenshot that serves as a reference of your request:</label>
+                        <input type="file" id="file" />
+                    </div>
+                    <br>
+                    <label for="terms-and-conditions" name="terms-and-conditions">
+                        <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" class="inline" /> I accept the <a href="#">terms and conditions</a>
+                    </label>
+                    <div class="submit">
+                        <button class="form-button" type="reset">Clear</button>
+                        <button onclick="handleData()" class="form-button" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var fileInput = document.getElementById('file');
+            function handleData() {
+                var  work_site = document.getElementsByName("work_site");
+                var form_data = new FormData(document.querySelector("form"));
+                var fname = document.getElementById('fname').value;
+                var lname = document.getElementById('lname').value;
+                var email = document.getElementById('email').value;
+                var phone = document.getElementById('phone').value;
+                var location = document.getElementById('location').value;
+                var comments = document.getElementById('comments').value;
+                if (fname !== "" && lname !== "" && email !== "" && phone !== "" && location!== "" && work_site[0].checked == true || work_site[1].checked == true && form_data.has("service[]") && comments !== "" && fileInput.value !== "") {
+                    alert("Thanks for submitting your request.!");
+                    return true;
+                }
+                alert("Please fill out required information to proceed");
+                document.getElementById("chk_error").style.visibility = "visible";
+                document.getElementById("chk_option").style.visibility = "visible"; 
+                return false;
+            }
+        </script>
+    </body>
+</html>
+
+

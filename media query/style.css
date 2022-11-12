@@ -1,0 +1,92 @@
+
+:root {
+    --background-color: rgba(128, 128, 128, 0.948);
+    --background-color1: rgba(245, 245, 245, 0.864);
+    --background-color2: rgb(96, 94, 94);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: fit-content;
+
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 15px; 
+}
+
+nav ul li{
+    display: inline-block;
+    padding: 6px 30px;
+    border: 1px solid var(--background-color1);
+    border-radius: 3px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--background-color1);
+    font-family: cursive, sans-serif;
+}
+
+nav li {
+    background-color:var(--background-color)  
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px){
+    nav ul li{
+        display: block;
+        padding: 5px;
+        margin: 5px;
+        border: 2px solid var(--background-color2);
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px){
+    nav ul li{
+        display: block;
+        padding: 5px ;
+        margin: 5px;
+        border: 2px solid var(--background-color2);
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    nav ul li{
+        display: block;
+        padding: 5px;
+        margin: 5px;
+        border: 2px solid var(--background-color2);
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px){
+    nav ul li{
+        display: block;
+        padding: 5px;
+        margin: 5px;
+        border: 2px solid var(--background-color2);
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1920px){
+    nav ul li{
+        display: block;
+        padding: 5px;
+        margin: 5px;
+        border: 2px solid var(--background-color2);
+        text-align: center;
+    }
+}
