@@ -179,7 +179,7 @@ while(condition)
 //     console.log(text += i);
 // }
 
-//for this example we skilled the number 2 and 3
+//for this example we skipped the number 2 and 3
 let text = "";
 
 const kotse = ["Porsche", "Mustang", "Tesla", "Lamborghini"];
