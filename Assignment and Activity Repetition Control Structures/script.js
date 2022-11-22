@@ -15,29 +15,35 @@ When a user inputs a valid number, it will display even or odd.
 
 
 
- function oddEven(num){
-    if(isNaN (num) || typeof parseInt (num) !== "number"){
-        //isNan - determines whether a values is NaN (not a number) or a number
-        return `Unexpected Input`;
-     }
+//ACTIVITY ANSWER
 
-    else if (num === '') {
-        return "Please input inside the box";
-   }
+//Prompt a user to enter a number.
+let number = prompt ("Give me a number");
 
-    else {
-        if (num % 2 == 0)
-       {
-            return ("Even Number");
-        }
-        else {
-            return ("Odd Number");
-        }
+for (number; number >= 0; number--)
+{
+    //When a number is less than to 50, we need to display the message that we need to terminate the loop
+
+    if (number < 50){
+        console.log(`Currently at number ${number}. Terminating the loop`);
+        break; //jumps out of the loop
     }
- }
 
- let userInput = prompt ("Give Me a Number");
-console.log(oddEven(userInput));
+    //When a number is divisible by 10, display a message that it is divisible by 10. Therefore, they will skip the number.
+    if (number % 10 === 0)
+    {
+        console.log(`The number is divisible by 10. Skipping the number`);
+        continue; //jumps over one iteration in the loop
+    }
+
+    //If it is divisible by 5, display the number.
+
+    if (number % 5 === 0)
+    {
+        console.log(number);
+    }
+
+}   
 
 
 
