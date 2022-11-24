@@ -17,12 +17,11 @@ add.addEventListener ("click", () => {
         checkbox.type = "checkbox";
         checkbox.id = "todo-list"
 
-        li.appendChild(document.createTextNode(userInput));
-        
               
 
         todoWrapper.appendChild(li)
         li.appendChild(checkbox);
+        li.appendChild(document.createTextNode(userInput));
         
 
         document.querySelector("#userInput").value="";
